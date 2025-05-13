@@ -18,6 +18,10 @@ router.post('/update-contact/:id', contactUpdateByID);
 
 router.get('/delete-contact/:id', contactDeleteByID);
 
+router.get(/(.*)/, (req, res, next) => {
+    res.redirect('/')
+    next();
+});
 
 module.exports = {
     contactRouter: router
